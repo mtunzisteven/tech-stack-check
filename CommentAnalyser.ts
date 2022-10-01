@@ -12,10 +12,11 @@ export class CommentAnalyser {
     // fetch each comment and return it in lowercase
     async loadFile(fileName) {
 
+        // async read file and specify encoding
         let fileContent = await fs.promises.readFile(fileName, { encoding: "utf-8" });
         return await fileContent;
 
-        // return await fileContent.toLowerCase(); Option for when lower and upper case "Shaker" and "Mover" are searched
+        // return await fileContent.toLowerCase(); Option for when "Shaker" and "Mover" search isn't case sensitive
     }
 
     // read all comments in the files withing the directory and set the value to callback function
@@ -37,7 +38,7 @@ export class CommentAnalyser {
             // set the file comments to an array
             for(var i=0; i< NumberOfFiles; i++){
 
-                // commentsArray received array from cb in CommentAnalysis
+            // commentsArray received array from cb in CommentAnalysis
             await this.loadFile(this.folder+'\\'+fileNames[i])
             .then(arr =>{
 
