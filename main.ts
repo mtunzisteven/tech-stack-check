@@ -2,12 +2,14 @@ import { CommentAnalyser } from "./CommentAnalyser";
 import { Satisctics } from './statistics';
 
 // create Anylyser and stastics Objects
-const cm = new CommentAnalyser('docs');
+const cm = new CommentAnalyser('/docs');
 const statisctics = new Satisctics(0,0,0,0,0); // initialize stats to 0
 
-// receives string file names and returns an array with comments
+// access comments using callbeack function and assign accordingly to statistics
+// Print comment statistics to console  
 cm.accessComments(comments =>{
 
+    // assign statistics values 
     statisctics.questions = filterComments(comments, '?');
     statisctics.moverInComments = filterComments(comments, 'Mover');
     statisctics.shakerInComments = filterComments(comments, 'Shaker');

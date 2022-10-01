@@ -1,12 +1,12 @@
 import * as fs from 'fs';
-// import path from 'path';
+import * as path from 'path';
 
 export class CommentAnalyser {
 
     folder: string;
 
     constructor(directory){
-        this.folder = directory;
+        this.folder = path.join(__dirname+directory);
     }
 
     // fetch each comment and return it in lowercase
@@ -61,7 +61,4 @@ export class CommentAnalyser {
         
             
     }
-
-    // path.join(__dirname+)
-
 }
