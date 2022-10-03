@@ -15,7 +15,7 @@ cm.accessComments(comments =>{
     statisctics.shakerInComments = filterComments(comments, 'Shaker');
     statisctics.spam = filterComments(comments, 'http');
 
-    statisctics.shortComments = comments.filter(comment => comment.length < 16).length;
+    statisctics.shortComments = comments.filter(comment => comment.length < 15).length;
 
 
     console.log(`\n=========== Comments Statistics ===========

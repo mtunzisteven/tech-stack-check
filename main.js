@@ -13,7 +13,7 @@ cm.accessComments(function (comments) {
     statisctics.moverInComments = filterComments(comments, 'Mover');
     statisctics.shakerInComments = filterComments(comments, 'Shaker');
     statisctics.spam = filterComments(comments, 'http');
-    statisctics.shortComments = comments.filter(function (comment) { return comment.length < 16; }).length;
+    statisctics.shortComments = comments.filter(function (comment) { return comment.length < 15; }).length;
     console.log("\n=========== Comments Statistics ===========\n                \nNumber of short comments: ".concat(statisctics.shortComments, "\n                \nNumber of comments mentioning \"Shaker\" device: ").concat(statisctics.shakerInComments, " \n                \nNumber of comments mentioning \"Mover\" device: ").concat(statisctics.moverInComments, "\n                \nNumber of comments that contain questions: ").concat(statisctics.questions, "\n                \nNumber of comments that are spam: ").concat(statisctics.spam, "\n            "));
 });
 // return the count for the query sent
